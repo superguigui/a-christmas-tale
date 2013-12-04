@@ -53,9 +53,9 @@ function onAssetsLoaded() {
 	document.addEventListener('keydown', onKeyDown);
 	document.addEventListener('keyup', onKeyUp);
 	window.addEventListener( 'resize', resizeApp, false );
-    document.addEventListener('touchstart', onTouchStart, false);
-    document.addEventListener('touchend', onTouchEnd, false);
-    document.addEventListener('touchmove', onTouchMove, false);
+	document.addEventListener('touchstart', onTouchStart, false);
+	document.addEventListener('touchend', onTouchEnd, false);
+	document.addEventListener('touchmove', onTouchMove, false);
 
 	// Start loop
 	Leap.loop(onLeapLoop);
@@ -104,22 +104,19 @@ function onKeyUp(e) {
 }
 
 function onTouchStart(e) {
-    console.log("onTouchStart", e.touches[0].pageX);
-    e.preventDefault();
-    game.mouse.x = e.touches[0].pageX;
-    game.state.shooting = true;
+	e.preventDefault();
+	game.mouse.x = e.touches[0].pageX;
+	game.state.shooting = true;
 }
 
 function onTouchEnd(e) {
-    console.log("onTouchEnd", e.touches[0].pageX);
-    e.preventDefault();
-    game.state.shooting = false;
+	e.preventDefault();
+	game.state.shooting = false;
 }
 
 function onTouchMove(e) {
-    console.log("onTouchMove", e.touches[0].pageX);
-    game.mouse.x = e.touches[0].pageX;
-    e.preventDefault();
+	game.mouse.x = e.touches[0].pageX;
+	e.preventDefault();
 }
 
 function onMouseDown(e) {
